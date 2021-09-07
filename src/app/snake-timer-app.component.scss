@@ -1,0 +1,127 @@
+:host {
+  padding: 2em 1em;
+  font-size: 3em;
+  font-family: Impact, Verdana, Arial, sans-serif;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+  }
+}
+
+.header {
+  @media screen and (max-width: 768px) {
+    margin-top: 2em;
+  }
+}
+
+.timer {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  padding: 3em 0;
+}
+
+.progress-bar {
+  outline: 0.1em #000 solid;
+  box-shadow: 0.2em 0.2em #000;
+}
+
+.progress {
+  height: 1em;
+  &.drown {
+    background-color: rgb(0, 128, 255);
+  }
+  &.spear, &.thrust {
+    background-color: rgb(37, 131, 29);
+  }
+}
+
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-style: italic;
+  text-outline: 0.2em #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #000;
+  min-width: 3em;
+}
+
+.header, .controls, .custom-timer {
+  display: flex;
+  justify-content: center;
+}
+
+.control {
+  font-family: Verdana, sans-serif;
+  margin: 0.2em;
+  padding: 0.2em 0;
+  font-size: 0.6em;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  background-color: #aaa;
+  border: 0.1em #333 solid;
+  border-radius: 0.2em;
+  min-width: 15%;
+  &:hover {
+    background-color: #ccc;
+  }
+  &.active {
+    &.giltine {
+      background-color: maroon;
+    }
+    &.abataras {
+      background-color: darkviolet;
+    }
+  }
+  &.volume {
+    font-size: 0.5em;
+    min-width: 2em;
+    min-height: 1.5em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+}
+
+.custom-timer {
+  margin-top: 1em;
+}
+
+.custom-timer-input {
+  position: absolute;
+  left: 1em;
+  text-align: center;
+  border: 1px #333 solid;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8em;
+    margin-top: 2em;
+  }
+}
+
+.timer-input {
+  font-size: 1em;
+  width: 2em;
+  text-align: right;
+}
+
+.text-info {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px #333 solid;
+  font-size: 0.4em;
+  background-color: #eee;
+  padding: 0.4em 0.8em;
+  border-radius: 0.5em;
+  &:hover {
+    background-color: lemonchiffon;
+  }
+}
+
+
