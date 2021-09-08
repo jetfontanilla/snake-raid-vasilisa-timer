@@ -14,11 +14,43 @@
   }
 }
 
+@mixin outlined-font {
+  text-outline: 0.2em #000;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-width: 0.04em;
+  -webkit-text-stroke-color: #000;
+}
+
+.timers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.timer-wrap {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .timer-wrap {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
 .timer {
-  width: 80%;
+  width: 70%;
   margin: auto;
   position: relative;
-  padding: 3em 0;
+  padding: 0.5em 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timer {
+    width: 90%;
+  }
 }
 
 .progress-bar {
@@ -36,18 +68,36 @@
   }
 }
 
+.timer-label {
+  @include outlined-font;
+  font-size: 0.8em;
+  text-transform: capitalize;
+  position: absolute;
+  left: 1em;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .timer-label {
+    left: 0.2em;
+  }
+}
+
 .time {
+  @include outlined-font;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2em;
   font-style: italic;
-  text-outline: 0.2em #000;
-  -webkit-text-fill-color: #fff;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #000;
   min-width: 3em;
+}
+
+@media screen and (max-width: 768px) {
+  .time {
+    font-size: 1.8em;
+  }
 }
 
 .header, .controls, .custom-timer {
@@ -71,12 +121,7 @@
     background-color: #ccc;
   }
   &.active {
-    &.giltine {
-      background-color: maroon;
-    }
-    &.abataras {
-      background-color: darkviolet;
-    }
+    background-color: #41465b;
   }
   &.volume {
     font-size: 0.5em;
@@ -85,6 +130,14 @@
     position: absolute;
     top: 1em;
     left: 1em;
+  }
+  &.sub {
+    min-width: 4em;
+    padding: 0.2em 1em;
+    background-color: rgb(1, 66, 131);
+    &:hover {
+      background-color: rgb(1, 66, 131, 0.6);
+    }
   }
 }
 

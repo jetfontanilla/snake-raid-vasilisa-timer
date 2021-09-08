@@ -1,29 +1,32 @@
 <div class="header">
   <span class="control phase-1"
-        [class.active]="getMode() == 'phase1'"
-        (click)="setMode('phase1')"
+        [class.active]="getPhase() == 'phase1'"
+        (click)="setPhase('phase1')"
   >Phase 1</span>
   <span class="control phase-2"
-        [class.active]="getMode() == 'phase2'"
-        (click)="setMode('phase2')"
+        [class.active]="getPhase() == 'phase2'"
+        (click)="setPhase('phase2')"
   >Phase 2</span>
 </div>
 
-<div *ngFor="let timerStruct of getTimers()">
-  <div class="timer">
-    <div class="progress-bar">
-      <div class="progress"
-           [style.width]="getProgressWidth(timerStruct.timerTick)"
-           [ngClass]="timerStruct.name"
-      ></div>
+<div class="timers">
+  <ng-template ngFor let-timerStruct [ngForOf]="getTimers()">
+    <div *ngIf="timerStruct.phase == this.getPhase()" class="timer-wrap">
+      <div class="timer">
+        <div class="timer-label">{{ timerStruct.name }}</div>
+        <div class="progress-bar">
+          <div class="progress"
+               [style.width]="getProgressWidth(timerStruct.timerTick)"
+               [ngClass]="timerStruct.name"
+          ></div>
+        </div>
+        <div class="time">{{timerStruct.timerTick?.timeString || timerStruct.action}}</div>
+      </div>
+      <div class="controls">
+        <span class="control sub" *ngIf="timerStruct.timer?.isPaused()" (click)="resume(timerStruct?.timer)">Start</span>
+        <span class="control sub" *ngIf="!timerStruct.timer?.isPaused()" (click)="pause(timerStruct?.timer)">Pause</span>
+        <span class="control sub" (click)="reset(timerStruct?.timer)">Reset</span>
+      </div>
     </div>
-    <div class="time">{{timerStruct.timerTick?.timeString || timerStruct.action}}</div>
-  </div>
-  <div class="controls">
-    <span class="control" *ngIf="timerStruct.timer?.isPaused()" (click)="resume(timerStruct?.timer)">Start</span>
-    <span class="control" *ngIf="!timerStruct.timer?.isPaused()" (click)="pause(timerStruct?.timer)">Pause</span>
-    <span class="control" (click)="reset(timerStruct?.timer)">Reset</span>
-  </div>
+  </ng-template>
 </div>
-
-
