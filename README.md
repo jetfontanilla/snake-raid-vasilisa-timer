@@ -1,6 +1,10 @@
 # Snake Raid Vasilisa Timer
 Specialized Timer for Vasilisa Snake Raid
-[Snake Raid Timer](https://github.com/angular/angular-cli)
+
+Timer in action here: [Snake Raid Timer](https://jetfontanilla.github.com/snake-raid-vasilisa-timer)
+
+#
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
