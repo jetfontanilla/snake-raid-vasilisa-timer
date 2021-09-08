@@ -1,7 +1,7 @@
 # Snake Raid Vasilisa Timer
 Specialized Timer for Vasilisa Snake Raid
 
-Timer in action here: [Snake Raid Timer](https://jetfontanilla.github.com/snake-raid-vasilisa-timer)
+Timer in action here: [Snake Raid Timer](https://jetfontanilla.github.io/snake-raid-vasilisa-timer/)
 
 #
 
