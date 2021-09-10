@@ -19,5 +19,5 @@ describe("CountdownTimer", () => {
 
     timer.destroy();
   }));
-  
+
 });
